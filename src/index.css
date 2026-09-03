@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Nunito', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  /* Background — light lavender to neutral warm */
+  --background-50: 0.99 0.002 300;
+  --background-100: 0.97 0.005 300;
+  --background-200: 0.94 0.008 300;
+  --background-300: 0.90 0.01 300;
+  --background-400: 0.84 0.012 300;
+  --background-500: 0.76 0.01 300;
+  --background-600: 0.66 0.008 300;
+  --background-700: 0.56 0.006 300;
+  --background-800: 0.46 0.004 300;
+  --background-900: 0.36 0.002 300;
+  --background-950: 0.24 0.001 300;
+
+  /* Primary — Deep Purple brand scale */
+  --primary-50: 0.97 0.01 300;
+  --primary-100: 0.94 0.02 300;
+  --primary-200: 0.88 0.04 300;
+  --primary-300: 0.80 0.06 300;
+  --primary-400: 0.70 0.09 300;
+  --primary-500: 0.58 0.14 300;
+  --primary-600: 0.50 0.12 300;
+  --primary-700: 0.42 0.10 300;
+  --primary-800: 0.34 0.08 300;
+  --primary-900: 0.27 0.07 305;
+  --primary-950: 0.20 0.05 305;
+
+  /* Accent — Teal / Cyan highlights & CTAs */
+  --accent-50: 0.96 0.02 215;
+  --accent-100: 0.93 0.04 215;
+  --accent-200: 0.88 0.07 215;
+  --accent-300: 0.80 0.10 215;
+  --accent-400: 0.74 0.13 215;
+  --accent-500: 0.68 0.16 215;
+  --accent-600: 0.60 0.14 215;
+  --accent-700: 0.52 0.12 215;
+  --accent-800: 0.44 0.10 215;
+  --accent-900: 0.36 0.08 215;
+  --accent-950: 0.28 0.06 215;
+
+  /* Secondary — Violet for icons, badges, accents */
+  --secondary-50: 0.96 0.01 295;
+  --secondary-100: 0.93 0.03 295;
+  --secondary-200: 0.87 0.06 295;
+  --secondary-300: 0.78 0.10 295;
+  --secondary-400: 0.68 0.14 295;
+  --secondary-500: 0.58 0.18 295;
+  --secondary-600: 0.50 0.16 295;
+  --secondary-700: 0.42 0.13 295;
+  --secondary-800: 0.35 0.10 295;
+  --secondary-900: 0.28 0.08 295;
+  --secondary-950: 0.22 0.06 295;
+
+  /* Foreground — Medium purple-tinted text scale */
+  --foreground-50: 0.98 0.001 300;
+  --foreground-100: 0.95 0.002 300;
+  --foreground-200: 0.88 0.003 300;
+  --foreground-300: 0.78 0.004 300;
+  --foreground-400: 0.66 0.005 300;
+  --foreground-500: 0.54 0.005 300;
+  --foreground-600: 0.44 0.004 300;
+  --foreground-700: 0.36 0.003 300;
+  --foreground-800: 0.26 0.002 300;
+  --foreground-900: 0.18 0.001 300;
+  --foreground-950: 0.12 0.001 300;
+}
+
+.dark {
+  --background-50: 0.18 0.01 305;
+  --background-100: 0.22 0.015 305;
+  --background-200: 0.28 0.02 305;
+  --background-300: 0.35 0.025 305;
+  --background-400: 0.44 0.03 305;
+  --background-500: 0.54 0.03 305;
+  --background-600: 0.64 0.025 305;
+  --background-700: 0.74 0.02 305;
+  --background-800: 0.84 0.015 305;
+  --background-900: 0.92 0.01 305;
+  --background-950: 0.97 0.005 300;
+
+  --foreground-50: 0.12 0.001 300;
+  --foreground-100: 0.20 0.002 300;
+  --foreground-200: 0.30 0.003 300;
+  --foreground-300: 0.42 0.004 300;
+  --foreground-400: 0.56 0.005 300;
+  --foreground-500: 0.70 0.005 300;
+  --foreground-600: 0.80 0.004 300;
+  --foreground-700: 0.88 0.003 300;
+  --foreground-800: 0.94 0.002 300;
+  --foreground-900: 0.97 0.001 300;
+  --foreground-950: 0.99 0.001 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: oklch(var(--foreground-800));
+  background-color: oklch(var(--background-50));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar styling for webkit browsers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid oklch(var(--accent-500));
+  outline-offset: 2px;
+}
